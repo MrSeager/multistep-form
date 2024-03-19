@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(217, 100%, 97%);
+  cursor: default;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+main{
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  border-radius: 15px;
+  gap: 5%;
+}
+
+#steps{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background: 
+    url('./assets/images/bg-sidebar-desktop.svg') 
+    no-repeat left top / 100%;
+  width: 25%;
+  margin: 2%;
+  padding: 3% 2%;
+}
+
+#steps div{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 0 5%;
+  margin-bottom: 5%;
+}
+
+#steps div button{
+  grid-row: span 2;
+  width: 40px;
+  height: 40px;
+  border: solid 1px white;
+  background-color: transparent;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  border-radius: 50px;
+}
+
+#steps div h1{
+  font-size: 13px;
+  margin: 0 0 2% 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+}
+
+#steps div h2{
+  font-size: 18px;
+  margin: 0;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.backBtn{
+  border-style: none;
+  background-color: transparent;
+  font-family: 'Ubuntu', sans-serif;
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  width: 25%;
+  height: 50px;
+}
+
+.backBtn:hover{
+  color: hsl(213, 96%, 18%);
+}
+
+.nextBtn{
+  width: 25%;
+  height: 50px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: hsl(213, 96%, 18%);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nextBtn:hover{
+  background-color: hsl(213, 96%, 28%);
+  cursor: pointer;
+}
+
+#personalForm{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 2%;
+  position: relative;
+}
+
+#personalForm h3, #yuorPlan h3{
+  margin: 5% 0 2% 0;
+  font-size: 25px;
+  color: hsl(213, 96%, 18%);
+}
+
+#personalForm p, #yuorPlan p{
+  margin: 0;
+  font-size: 15px;
+  color: hsl(231, 11%, 63%);
+}
+
+#personalForm form{
+  display: flex;
+  flex-direction: column;
+}
+
+#personalForm form label{
+  color: hsl(213, 96%, 18%);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 3% 0 1% 0;
+}
+
+#personalForm form input{
+  height: 40px;
+  border-radius: 10px;
+  border: solid 1px hsl(231, 11%, 63%);
+  font-family: 'Ubuntu', sans-serif;
+  padding-left: 3%;
+  cursor: pointer;
+}
+
+#personalForm form input:focus{
+  border: solid 1px hsl(213, 96%, 18%);
+  outline-offset: 0px;
+  outline: none;
+}
+
+#personalForm button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#yuorPlan{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  width: 50%;
+  margin: 2%;
+  gap: 2%;
+}
+
+#yuorPlan h3{
+  grid-column: span 3;
+  height: 50%;
+}
+
+#yuorPlan p{
+  grid-column: span 3;
+  height: 50%;
+  margin-top: -6%;
+}
+
+.opt{
+  border: solid 2px hsl(229, 24%, 87%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .5s;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 10% 0 10%;
+  height: 200px;
+}
+
+.opt img{
+  width: 33%;
+  margin-bottom: 50%;
+}
+
+.opt h4{
+  margin: 0;
+  font-size: 20px;
+  color: hsl(213, 96%, 18%);
+}
+
+.opt h5{
+  margin: 5% 0 0 0;
+  font-size: 15px;
+  color: hsl(231, 11%, 63%);
+  font-weight: 300;
+}
+
+.opt h6{
+  margin: 5% 0 0 0;
+  font-size: 15px;
+  color: hsl(213, 96%, 18%);
+}
+
+.selected{
+  border: solid 2px hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.subOpt{
+  grid-column: span 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 25%;
+  background-color: hsl(217, 100%, 97%);
+  height: 50%;
+  border-radius: 10px;
+}
+
+.subOpt h6{
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+  transition: .3s;
+}
+
+.subOpt .checked{
+  color: hsl(213, 96%, 18%);
+}
+
+.navBtns{
+  grid-column: span 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: end;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(213, 96%, 18%);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
