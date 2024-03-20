@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import ArcImg from './assets/images/icon-arcade.svg';
@@ -33,7 +32,7 @@ const MainPage = () => {
           <h2>Summery</h2>
         </div>
       </section>
-      <YourPlan />
+      <AddOns />
     </main>
   );
 };
@@ -41,8 +40,8 @@ const MainPage = () => {
 const PersonalInfo = () => {
   return(
     <section id='personalForm'>
-      <h3>Personal info</h3>
-      <p>Please provide your name, email address, and phone number.</p>
+      <h3 className='secHeadline'>Personal info</h3>
+      <p className='secSecondLine'>Please provide your name, email address, and phone number.</p>
       <form>
         <label for='name'>Name</label>
         <input type='text' id='name' placeholder='e.g. Stephen King'></input>
@@ -66,8 +65,8 @@ const YourPlan = () => {
 
   return(
     <section id='yuorPlan'>
-      <h3>Select your plan</h3>
-      <p>You have the option of monthly or yearly billing.</p>
+      <h3 className='secHeadline'>Select your plan</h3>
+      <p className='secSecondLine'>You have the option of monthly or yearly billing.</p>
       <div className={`opt ${selectedPlan === 'Arcade' ? 'selected' : ''}`}
         onClick={() => handlePlanClick('Arcade')}>
         <img src={ArcImg} alt='icon' />
@@ -102,6 +101,92 @@ const YourPlan = () => {
       <div className='navBtns'>
         <button className='backBtn'>Go Back</button>
         <button className='nextBtn'>Next Step</button>
+      </div>
+    </section>
+  );
+};
+
+const AddOns = () => {
+  const [onlineServiceChecked, setOnlineServiceChecked] = useState(false);
+  const [largerStorageChecked, setLargerStorageChecked] = useState(false);
+  const [customizableProfileChecked, setCustomizableProfileChecked] = useState(false);
+
+  const handleOnlineServiceClick = () => {
+    setOnlineServiceChecked(!onlineServiceChecked);
+  };
+
+  const handleLargerStorageClick = () => {
+    setLargerStorageChecked(!largerStorageChecked);
+  };
+
+  const handleCustomizableProfileClick = () => {
+    setCustomizableProfileChecked(!customizableProfileChecked);
+  };
+
+  return (
+    <section id='addOns'>
+      <h3 className='secHeadline'>Personal info</h3>
+      <p className='secSecondLine'>Please provide your name, email address, and phone number.</p>
+      <div className={`addOn ${onlineServiceChecked ? 'checked' : ''}`}
+           onClick={handleOnlineServiceClick}>
+          <label className='checkBox'>
+            <input type='checkbox' checked={onlineServiceChecked} />
+            <span class="checkmark"></span>
+        </label>
+        <h4>Online service</h4>
+        <h5>+$1/mo</h5>
+        <p>Access to multiplayer games</p>
+      </div>
+      <div className={`addOn ${largerStorageChecked ? 'checked' : ''}`}
+           onClick={handleLargerStorageClick}>
+        <label className='checkBox'>
+          <input type='checkbox' checked={largerStorageChecked} />
+          <span class="checkmark"></span>
+        </label>
+        <h4>Larger storage</h4>
+        <h5>+$2/mo</h5>
+        <p>Extra 1TB of cloud save</p>
+      </div>
+      <div className={`addOn ${customizableProfileChecked ? 'checked' : ''}`}
+           onClick={handleCustomizableProfileClick}>
+        <label className='checkBox'>
+          <input type='checkbox' checked={customizableProfileChecked} />
+          <span class="checkmark"></span>
+        </label>
+        <h4>Customizable Profile</h4>
+        <h5>+$2/mo</h5>
+        <p>Custom theme on your profile</p>
+      </div>
+      <div className='navBtns'>
+        <button className='backBtn'>Go Back</button>
+        <button className='nextBtn'>Next Step</button>
+      </div>
+    </section>
+  );
+};
+
+const FinishingUp = () => {
+  return(
+    <section id='finishingUp'>
+      <h3 className='secHeadline'>Finishing up</h3>
+      <p className='secSecondLine'>Double-check everything looks OK before confirming.</p>
+      <div>
+        <div>
+          <h4>{}</h4>
+          <h5>{}</h5>
+          <a>Change</a>
+        </div>
+        <div>
+
+        </div>
+      </div>
+      <div>
+        <h5>Total (per month)</h5>
+        <h6>{}</h6>
+      </div>
+      <div className='navBtns'>
+        <button className='backBtn'>Go Back</button>
+        <button className='confBtn'>Confirm</button>
       </div>
     </section>
   );
